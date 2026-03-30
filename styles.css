@@ -1,7 +1,14 @@
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .navbar {
@@ -26,6 +33,9 @@
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
