@@ -3,61 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodiversity Showcase</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Image Gallery</title>
+    <style>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        figure {
+            margin: 10px;
+            cursor: pointer;
+        }
+        figcaption {
+            text-align: center;
+            margin-top: 5px;
+        }
+        .description {
+            display: none;
+            margin-top: 15px;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Biodiversity Showcase</h1>
-        <nav>
-            <ul>
-                <li><a href="#animals">Animals</a></li>
-                <li><a href="#ecosystems">Ecosystems</a></li>
-                <li><a href="#flora">Flora</a></li>
-                <li><a href="#github">GitHub Repositories</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="animals">
-            <h2>Animals</h2>
-            <div class="gallery">
-                <img src="Parrots.jpg" alt="Parrots">
-                <img src="bird of paradise.jpg" alt="Bird of Paradise">
-                <img src="kangaroo.webp" alt="Kangaroo">
-                <!-- Add more animal images as needed -->
-            </div>
-        </section>
-        <section id="ecosystems">
-            <h2>Ecosystems</h2>
-            <div class="gallery">
-                <img src="DYNAMIC ECOSYSTEM (2).jpg" alt="Dynamic Ecosystem">
-                <img src="RAINFORESTS.jfif" alt="Rainforests">
-                <img src="MOUNTAIN BIODIVERSITY.jpg" alt="Mountain Biodiversity">
-                <!-- Add more ecosystem images as needed -->
-            </div>
-        </section>
-        <section id="flora">
-            <h2>Flora</h2>
-            <div class="gallery">
-                <img src="Orchid Species.webp" alt="Orchid Species">
-                <img src="ENDEMIC BIRDS.jfif" alt="Endemic Birds">
-                <img src="MARINE SANCTUARY.webp" alt="Marine Sanctuary">
-                <!-- Add more flora images as needed -->
-            </div>
-        </section>
-        <section id="github">
-            <h2>GitHub Repositories</h2>
-            <ul>
-                <li><a href="https://github.com/username/repo1">Repository 1</a></li>
-                <li><a href="https://github.com/username/repo2">Repository 2</a></li>
-                <li><a href="https://github.com/username/repo3">Repository 3</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Biodiversity Showcase. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+    <h1>Image Gallery</h1>
+    <div class="image-container">
+        <figure onclick="showDescription('1')">
+            <img src="image1.jpg" alt="Image 1" />
+            <figcaption>Image 1</figcaption>
+        </figure>
+        <figure onclick="showDescription('2')">
+            <img src="image2.jpg" alt="Image 2" />
+            <figcaption>Image 2</figcaption>
+        </figure>
+        <figure onclick="showDescription('3')">
+            <img src="image3.jpg" alt="Image 3" />
+            <figcaption>Image 3</figcaption>
+        </figure>
+    </div>
+    <div id="description-1" class="description">Description for Image 1</div>
+    <div id="description-2" class="description">Description for Image 2</div>
+    <div id="description-3" class="description">Description for Image 3</div>
+    <script>
+        function showDescription(id) {
+            const descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(desc => desc.style.display = 'none');
+            document.getElementById(`description-${id}`).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
